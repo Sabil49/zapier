@@ -14,7 +14,7 @@ async function main() {
     const producer =  kafka.producer();
     await producer.connect();
 
-    while(1) {
+    while (1) {
         const pendingRows = await client.zapRunOutbox.findMany({
             where :{},
             take: 10
